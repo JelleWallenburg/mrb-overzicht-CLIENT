@@ -116,7 +116,7 @@ Vehicle model
 
 ```
 garage - ObjectID<Garage> // required
-licence plate - String //required, check if exists in RDW data
+licencePlate - String //required, check if exists in RDW data
 image - String
 ```
 
