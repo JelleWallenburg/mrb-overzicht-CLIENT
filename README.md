@@ -1,40 +1,51 @@
-# Project Name
+# mrb-overview
 
-## Description
+## Beschrijving
 
-Describe your project in one/two lines.
+mrb-overview is an app for getting insights in your monthly Dutch motor vehicle tax (mrb). Users can create virtual garages in regions in the Netherlands and add vehicles by licence plate to simulate their monthly mrb paid of their garage(s).
 
 ## User Stories
 
--  **404:** As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault
--  **Signup:** As an anon I can sign up in the platform so that I can start saving favorite restaurants
--  **Login:** As a user I can login to the platform so that I can see my favorite restaurants
--  **Logout:** As a user I can logout from the platform so no one else can use it
--  **Add Restaurants** As a user I can add a restaurant so that I can share it with the community
--  **List Restaurants** As a user I want to see the restaurants so that I can choose one to eat
--  **Search Restaurants** As a user I want to search restaurants by name so that I know if it´s already in the platform
--  **Add to favorites** As a user I want to add a restaurant to favorite so that I can save the restaurants that I liked the most
--  **See my favorites** As a user I want to see my favorite restaurantes so that I can see the ones I liked the most
+-  **404:** As an anon/user I can see a 404 page if I try to reach a page that does not exist so that I know it's my fault.
+-  **Signup:** As an anon I can sign up in the platform so that I can start saving garages and vehicles.
+-  **Login:** As a user I can login to the platform so that I can see my garages and vehicles.
+-  **Logout:** As a user I can logout from the platform so no one else can use it.
+-  **Check profile:** 
+-  **CREATE garage/vehicle:** As a user I can add a garage/vehicle so I can calculate my total mrb.
+-  **READ mrb overview:** As a user I can check my mrb on user/garage or vehicle level and see detailed information about the garage/vehicle.
+-  **UPDATE garage/vehicle:** As a user I can update a garage/vehicle so that I can update my mrb calculation.
+-  **DELETE garage/vehicle:** As a user I can delete a garage/vehicle so that I can update my total mrb calculation.
+
 
 ## Backlog
 
-User profile:
-- see other users profile sand their favorites
+Different language:
+- add English as a language
 
-Geo Location:
-- see restaurants in a map
+Upload vehicle image:
+- add an image of the specific vehicle (and extract licence plate)
+
+Yearly overview:
+- send yearly overview to registered email
+
+Geo location:
+- choose location of garage by point on map.
+
+Yearly mrb development:
+- see the development of mrb over years
   
 # Client
 
 ## Routes
 
-- / - Homepage
-- /auth/signup - Signup form
-- /auth/login - Login form
-- /restaurants - restaurant list
-- /restaurants/create - create a restaurant
-- /restaurants/:id - restaurant detail
-- /profile/me - my details and favorite restaurants
+- GET/ - Homepage
+- POST/auth/signup - Signup form: username, email and password
+- GET/auth/login - Login form: username, password
+- POST/auth/logout - redirects to Hompage
+- (GET/PUT/POST/garages) - CRUD garage
+- (GET/PUT/POST)/garage/:id - garage detail
+- (GET)/vehicle/:id - vehicle detail
+- (GET/POST)/profile/me - my details
 - 404
 
 ## Pages
@@ -42,37 +53,44 @@ Geo Location:
 - Home Page (public)
 - Sign in Page (anon only)
 - Log in Page (anon only)
-- Restaurants List Page (public only)
-- Restaurant Create (user only)
-- Restaurant Detail Page (public only)
+- Garage CRUD (user only)
+- Garage Detail Page (user only)
 - My Profile Page (user only)
 - 404 Page (public)
 
 ## Components
 
-- Restaurant Card component
-  - Input: restaurant: any
-  - Output: favorite(restaurantId: string, on: boolean)
-- Search component
-  - Output: change(terms: string)
+- Navigation Bar component
+- Hero component
+- Garage Card component
+- Vehicle Card component
+- Vehicle Card-detailed component
 
-## IO
-
+## Pages
+- Homepage
+- SignupPage
+- LoginPage
+- GaragesPage
+- GaragePage
+- VehiclePage
 
 ## Services
-
 - Auth Service
   - auth.login(user)
   - auth.signup(user)
   - auth.logout()
   - auth.me()
   - auth.getUser() // synchronous
-- Restaurant Service
-  - restaurant.list()
-  - restaurant.create(data)
-  - restaurant.detail(id)
-  - restaurant.addFavorite(id)
-  - restaurant.removeFavorite(id)   
+- Garage Service
+  - garage.list(data)
+  - garage.create(data)
+  - garage.update(data)
+  - garage.remove(data)
+- Vehicle Service
+  - vehicle.list()
+  - vehicle.create(data)
+  - vehicle.update(data)
+  - vehicle.remove(data)
 
 # Server
 
@@ -81,22 +99,30 @@ Geo Location:
 User model
 
 ```
-username - String // required
-email - String // required & unique
+username - String // required & unique
+email - String // required
 password - String // required
-favorites - [ObjectID<Restaurant>]
 ```
 
-Restaurant model
+Garage model
 
 ```
 owner - ObjectID<User> // required
 name - String // required
-phone - String
-address - String
+postalCode - String //required, 4 numbers and ending two letters
+```
+
+Vehicle model
+
+```
+garage - ObjectID<Garage> // required
+licence plate - String //required, check if exists in RDW data
+image - String
 ```
 
 ## API Endpoints/Backend Routes
+
+What do I have to fill in here? Can I merge the routes and the API endpoints/backend routes? Where do I have to put the routes to the external API?
 
 - GET /auth/me
 - POST /auth/signup
@@ -111,8 +137,6 @@ address - String
 - POST /auth/logout
   - body: (empty)
 - POST /user/me/favorite
-  - body:
-    - restaurantId
 - DELETE /user/me/favorite/:restaurantId
   - body: (empty)
 - GET /restaurant
@@ -123,25 +147,27 @@ address - String
     - address
 - GET /restaurant/:id
 
-  
-
 ## Links
 
 ### Trello/Kanban
 
-[Link to your trello board](https://trello.com) or picture of your physical board
+[Link to trello board](https://trello.com/b/FFxOjflY/mrb-overzicht-mvp) or picture of your physical board
+
+### Wireframes
+
+[Link to Figma](https://www.figma.com/file/F6LXHeK6yZkrUjnd7WIZRe/mrb-overzicht?type=design&node-id=0-1&mode=design&t=w0kh7dD9DuA2s4Tq-0)
 
 ### Git
 
 The url to your repository and to your deployed project
 
-[Client repository Link](http://github.com)
-[Server repository Link](http://github.com)
+[Client repository Link](https://github.com/JelleWallenburg/mrb-overzicht-CLIENT)
+[Server repository Link](https://github.com/JelleWallenburg/mrb-overzicht-SERVER)
 
-[Deploy Link](http://heroku.com)
+[Deploy Link](http://heroku.co)
 
 ### Slides
 
 The url to your presentation slides
 
-[Slides Link](http://slides.com)
+[Slides Link](https://docs.google.com/presentation/d/1hCJ9616y74af72xwZfWvA1Zmy5JD8eR6JxtS-GuLq6g/edit#slide=id.p)
