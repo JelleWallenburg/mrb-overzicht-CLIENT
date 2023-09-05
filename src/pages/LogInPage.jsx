@@ -1,8 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-
-
 import authMethods from "../services/auth.service";
 
 function LogInPage(){

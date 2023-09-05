@@ -16,7 +16,7 @@ function SignUpPage(){
 
   const handleSignUpSubmit = (e) => {
     e.preventDefault()
-    console.log("user",user)
+    console.log("user", user)
 
     authMethods.signUp(user)
     .then(() => navigate('/login'))
@@ -35,7 +35,13 @@ function SignUpPage(){
         <input type="password" name= "password" value= {user.password} onChange={handleChange}/>
         <button type="submit">Maak account aan</button>       
       </form>
-      <Link to="/login"> <button>Login </button></Link>
+      <div>
+        <h3>Al een account?</h3>
+        <div>
+          <Link to="/login"> <button>Login </button></Link>
+        </div>
+
+      </div>
     </div>
   )
 }
