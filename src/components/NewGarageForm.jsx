@@ -2,9 +2,11 @@ import { useState } from "react";
 
 import garageMethods from "../services/garage.service"
 
-function NewGarageForm(){
-  const [garage, setGarage] = useState({garageName: '', postalCode: ''});
+function NewGarageForm({change}){
 
+  const {setChanged} = change;
+  const [garage, setGarage] = useState({garageName: '', postalCode: ''});
+  
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -15,10 +17,13 @@ function NewGarageForm(){
     e.preventDefault()
     garageMethods.addGarage(garage)
       .then(response => {
+          console.log("response", response)
           setGarage({garageName: '', postalCode: ''})
-          window.location.reload(); //is this smart or is there a better way?
+          setChanged(true)
+
         })
-      .catch(err => console.error(err))
+      .catch(err => console.error("handlesubmit error", err));
+    setChanged(false);
   }
 
   return(

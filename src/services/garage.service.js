@@ -13,11 +13,11 @@ const getGarages = () => {
     .catch(err => console.error(err))
 }
 
-const addGarage = (garage) => {
+const addGarage = (oneGarage) => {
   const storedToken = localStorage.getItem('authToken')
-  return api.post("/garages/", {garageName: garage.garageName, postalCode: garage.postalCode},{headers: { Authorization: `Bearer ${storedToken}`}})
+  return api.post("/garages/", {garageName: oneGarage.garageName, postalCode: oneGarage.postalCode},{headers: { Authorization: `Bearer ${storedToken}`}})
     .then(response => response.data)
-    .catch(err => console.error(err))
+    .catch(err => console.error("catch1" ,err))
 }
 
 const deleteGarage= (garage) => {

@@ -8,22 +8,24 @@ import garageMethods from "../services/garage.service"
 
 function GaragesPage () {
   const [garages, setGarages] = useState(null);
-
+  const [changed, setChanged]= useState(null);
+ 
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    async function getGarages() {
-      try{
-        const response = await garageMethods.getGarages();
-        setGarages(response);
-        setIsLoading(false);
-      }
-      catch (error) {
-        console.log(error)
-      }
+  async function getAllGarages() {
+    try{
+      const response = await garageMethods.getGarages();
+      setGarages(response);
+      setIsLoading(false);
     }
-    getGarages()
-  }, []) //why will adding a missing dependency blow up everything?
+    catch (error) {
+      console.log("Get all garages", error)
+    }
+  }
+
+  useEffect(() => {
+    getAllGarages()
+  }, [changed]) //why will adding a missing dependency blow up everything?
 
   if(isLoading===true) {
     return (
@@ -42,7 +44,7 @@ function GaragesPage () {
             </div>
           )
         })}
-        <NewGarageForm/>
+        <NewGarageForm change= {{changed, setChanged}}/>
       </main>
     </div>
   )
