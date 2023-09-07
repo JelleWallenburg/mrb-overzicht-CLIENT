@@ -3,8 +3,7 @@ import { useState } from "react";
 import garageMethods from "../services/garage.service"
 
 function NewGarageForm({change}){
-
-  const {setChanged} = change;
+  const {changed, setChanged} = change;
   const [garage, setGarage] = useState({garageName: '', postalCode: ''});
   
   const handleChange = (e) => {
@@ -15,15 +14,16 @@ function NewGarageForm({change}){
   
   const handleSubmit = (e) => {
     e.preventDefault()
+    setChanged(false)
+    
     garageMethods.addGarage(garage)
       .then(response => {
           console.log("response", response)
           setGarage({garageName: '', postalCode: ''})
           setChanged(true)
-
         })
       .catch(err => console.error("handlesubmit error", err));
-    setChanged(false);
+    setChanged(false)
   }
 
   return(

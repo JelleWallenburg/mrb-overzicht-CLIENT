@@ -1,11 +1,18 @@
 import garagesMethods from "../services/garage.service";
 import { Link } from "react-router-dom"
 
-function Garage({garage}){
+function Garage({garage, change}){
+  const {changed, setChanged} = change;
+  setChanged(false)
 
   const deleteThisGarage = () => {
+    setChanged(false)
     garagesMethods.deleteGarage(garage)
-    window.location.reload(); //is this smart or is there a better way?
+    .then(response => {
+       setChanged(true)
+    })
+    .catch(err => console.error("delete this garage", err));
+    setChanged(false);
   }
 
   return(
@@ -14,7 +21,6 @@ function Garage({garage}){
       <h3>{garage.postalCode}</h3>
       <button onClick={deleteThisGarage}>Delete</button>
     </div>
-  
   )
 }
 

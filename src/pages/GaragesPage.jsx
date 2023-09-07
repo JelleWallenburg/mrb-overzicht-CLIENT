@@ -8,8 +8,7 @@ import garageMethods from "../services/garage.service"
 
 function GaragesPage () {
   const [garages, setGarages] = useState(null);
-  const [changed, setChanged]= useState(null);
- 
+  const [changed, setChanged]= useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   async function getAllGarages() {
@@ -19,13 +18,13 @@ function GaragesPage () {
       setIsLoading(false);
     }
     catch (error) {
-      console.log("Get all garages", error)
+      console.log("Error getAllGarages", error)
     }
   }
 
   useEffect(() => {
     getAllGarages()
-  }, [changed]) //why will adding a missing dependency blow up everything?
+  }, [changed]) 
 
   if(isLoading===true) {
     return (
@@ -39,8 +38,8 @@ function GaragesPage () {
       <main>
         {garages.map(garage => {
           return(
-            <div className= "garage" key={garage._id}>
-                <Garage garage={garage}/>
+            <div className= "garage-overview" key={garage._id}>
+                <Garage garage= {garage} change= {{changed, setChanged}}/>
             </div>
           )
         })}

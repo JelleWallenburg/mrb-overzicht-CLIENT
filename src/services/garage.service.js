@@ -22,9 +22,8 @@ const addGarage = (oneGarage) => {
 
 const deleteGarage= (garage) => {
   const storedToken = localStorage.getItem('authToken')
-  console.log(storedToken)
   return api.delete("/garages/", {data:{_id: garage._id}, headers: { Authorization: `Bearer ${storedToken}`}})
-    .then((response) => console.log("deleted",response))
+    .then(response => response.data)
     .catch(err => console.error(err))
 };
 
