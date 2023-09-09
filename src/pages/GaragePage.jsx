@@ -5,7 +5,7 @@ import Loading from "../components/Loading";
 import Vehicle from "../components/Vehicle";
 import NewVehicleForm from "../components/NewVehicleForm";
 
-import vehiclesMethods from "../services/vehicle.service";
+import vehiclesMethods from "../services/vehicles.service";
 
 function GaragePage(){
   const {id} = useParams();
@@ -18,7 +18,6 @@ function GaragePage(){
     try{
       const response = await vehiclesMethods.getVehicles(id);
       setVehicles(response);
-      console.log("response",response)
       setIsLoading(false);
     }
     catch (error){

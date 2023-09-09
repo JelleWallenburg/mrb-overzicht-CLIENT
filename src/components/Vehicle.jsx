@@ -1,4 +1,5 @@
-import vehiclesMethods from "../services/vehicle.service";
+import vehiclesMethods from "../services/vehicles.service";
+import { Link } from "react-router-dom";
 
 function Vehicle({id, vehicle, change}){
   
@@ -17,7 +18,7 @@ function Vehicle({id, vehicle, change}){
 
   return(
     <div className="garage">
-      <h3>{vehicle.licensePlate}</h3>
+      <Link to={`/vehicle/${vehicle._id}`}><h3>{vehicle.licensePlate}</h3></Link>
       <h3>{vehicle.mrb}</h3>
       <button onClick={deleteThisVehicle}>Delete</button>
     </div>

@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import vehiclesMethods from "../services/vehicle.service";
+import vehiclesMethods from "../services/vehicles.service";
 
 function NewVehicleForm({change, id}){
-  const {changed, setChanged} = change;
+  const {setChanged} = change;
   const [vehicle, setVehicle] = useState({licensePlate:''});
   
   const handleChange = (e) => {

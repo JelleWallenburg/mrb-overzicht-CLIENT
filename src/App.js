@@ -7,6 +7,7 @@ import SignUpPage from "./pages/SignUpPage";
 import LogInPage from "./pages/LogInPage";
 import GaragesPage from "./pages/GaragesPage";
 import GaragePage from "./pages/GaragePage";
+import VehiclePage  from "./pages/VehiclePage"
 
 //components
 import IsPrivate from "./components/isPrivate";
@@ -50,6 +51,14 @@ function App() {
           element={
             <IsPrivate>
               <GaragePage />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/vehicle/:id"
+          element={
+            <IsPrivate>
+              <VehiclePage/>
             </IsPrivate>
           }
         />

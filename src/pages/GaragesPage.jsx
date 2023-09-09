@@ -1,9 +1,9 @@
 import { useState, useEffect} from "react";
-import Loading from "../components/Loading"
+import Loading from "../components/Loading";
 import Garage from "../components/Garage";
-import NewGarageForm from "../components/NewGarageForm"
+import NewGarageForm from "../components/NewGarageForm";
 
-import garageMethods from "../services/garage.service"
+import garageMethods from "../services/garage.service";
 
 
 function GaragesPage () {
@@ -23,6 +23,7 @@ function GaragesPage () {
   }
 
   useEffect(() => {
+    garageMethods.getGarages()
     getAllGarages()
   }, [changed]) 
 
