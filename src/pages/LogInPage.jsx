@@ -23,8 +23,8 @@ function LogInPage(){
       .then((tokenObject) => {
         storeToken(tokenObject.authToken)
         authenticateUser()
-        navigate("/garages")
       })
+      .then(() => navigate("/garages"))
       .catch(err => console.error(err))
   }
 

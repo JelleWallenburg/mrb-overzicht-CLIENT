@@ -10,13 +10,17 @@ function IsPrivate( { children } ) {
   // If the authentication is still loading 
   if (isLoading) return <Loading/>;
  
-  if (!isLoggedIn) {
+  if (!isLoggedIn ) { 
   // If the user is not logged in 
-    return <Navigate to="/" />;
+    if(!isLoading){
+      return <Navigate to="/login" />;
+    }
   } else {
   // If the user is logged in, allow to see the page 
     return children;
   }
 }
+
+//&& isLoading
  
 export default IsPrivate;

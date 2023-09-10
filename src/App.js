@@ -1,4 +1,7 @@
 import "./App.css";
+import "./index.css";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from "react-router-dom";
 
 //pages
@@ -12,12 +15,12 @@ import VehiclePage  from "./pages/VehiclePage"
 //components
 import IsPrivate from "./components/isPrivate";
 import IsAnon from "./components/isAnon";
-import NavBar from "./components/Navbar";
+import NavBar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <NavBar/>
       <Routes>
         <Route 
           path="/" 

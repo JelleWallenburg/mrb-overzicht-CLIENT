@@ -3,7 +3,7 @@ import { useState } from "react";
 import garageMethods from "../services/garage.service"
 
 function NewGarageForm({change}){
-  const {changed, setChanged} = change;
+  const {setChanged} = change;
   const [garage, setGarage] = useState({garageName: '', postalCode: ''});
   
   const handleChange = (e) => {

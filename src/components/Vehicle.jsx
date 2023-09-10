@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Vehicle({id, vehicle, change}){
   
-  const {changed, setChanged} = change;
+  const {setChanged} = change;
  
   const deleteThisVehicle = () => {
     setChanged(false)

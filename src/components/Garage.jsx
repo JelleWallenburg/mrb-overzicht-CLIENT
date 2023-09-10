@@ -3,8 +3,7 @@ import { Link } from "react-router-dom"
 
 function Garage({garage, change}){
   const { setChanged} = change;
-  setChanged(false)
-
+  
   const deleteThisGarage = () => {
     setChanged(false)
     garagesMethods.deleteGarage(garage)
