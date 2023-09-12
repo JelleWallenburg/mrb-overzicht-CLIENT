@@ -1,14 +1,4 @@
-.Navbar{
+.navbar-custom{
   background-color: #14213D;
-  color: #FFFFFF;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+
 }
-
-.NavbarBrand{
-  color:white
-}
-
-

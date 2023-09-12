@@ -25,7 +25,7 @@ function VehiclePage() {
 
   useEffect(() => {
     getOneVehicle(id)
-  })
+  },[])
 
   if(isLoading===true) {
     return (

@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+
 import vehiclesMethods from "../services/vehicles.service";
 
 function NewVehicleForm({change, id}){
@@ -24,15 +27,15 @@ function NewVehicleForm({change, id}){
   }
 
   return(
-    <div className="addVehicle" onSubmit={handleSubmit}>
-      <form>
-        <label>Kenteken</label>
-        <input type="text" name= "licensePlate" value={vehicle.licensePlate} onChange={handleChange}/>
-        <button type="submit">Voeg voertuig toe</button>
-      </form>
-
-    </div>
-    
+    <Form className="bg-info" onSubmit={handleSubmit} style={{padding: "10%"}}>
+      <h1>Voeg voertuig toe aan deze garage</h1>
+      <br/>
+      <Form.Group className="mb-3" controlId="garagename">
+        <Form.Label>Naam van garage</Form.Label>
+        <Form.Control type="text" name= "licensePlate" placeholder="Vul kenteken zonder streep in (6 tekens) " value={vehicle.licensePlate} onChange={handleChange}/>
+      </Form.Group>
+      <Button variant="primary" type="submit">Voeg voertuig toe</Button>
+    </Form>    
   )
 };
 

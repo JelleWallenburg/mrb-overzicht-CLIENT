@@ -34,9 +34,9 @@ function GaragesPage () {
   }
 
   return(
-    <div>
-      <h1> Overview of garages</h1>
-      <main>
+    <main>
+        <h1> Overview of garages</h1>
+      <div>
         {garages.map(garage => {
           return(
             <div className= "garage-overview" key={garage._id}>
@@ -45,8 +45,10 @@ function GaragesPage () {
           )
         })}
         <NewGarageForm change= {{changed, setChanged}}/>
-      </main>
-    </div>
+      </div>
+    </main>
+
+
   )
 };
 

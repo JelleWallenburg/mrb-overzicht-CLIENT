@@ -1,11 +1,11 @@
 import "./App.css";
 import "./index.css";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./scss/custom.scss"
 import { Routes, Route } from "react-router-dom";
 
 //pages
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import SignUpPage from "./pages/SignUpPage";
 import LogInPage from "./pages/LogInPage";
 import GaragesPage from "./pages/GaragesPage";
@@ -16,6 +16,7 @@ import VehiclePage  from "./pages/VehiclePage"
 import IsPrivate from "./components/isPrivate";
 import IsAnon from "./components/isAnon";
 import NavBar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -66,6 +67,8 @@ function App() {
           }
         />
       </Routes>
+      <br/>
+      <Footer/>
     </div>
   );
 }

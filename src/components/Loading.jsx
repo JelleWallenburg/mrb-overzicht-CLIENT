@@ -1,9 +1,10 @@
-import { FaSpinner } from "react-icons/fa";
+import Spinner from 'react-bootstrap/Spinner';
+
 
 function Loading(){
   return (
     <div>
-      <FaSpinner/>
+      <Spinner animation="border" />
     </div>
   )
 };

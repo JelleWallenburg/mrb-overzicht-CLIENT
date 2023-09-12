@@ -2,6 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState} from "react";
 import authMethods from "../services/auth.service";
 
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+
 function SignUpPage(){
   const [user, setUser] = useState({username: "", email:"", password: ""});
 
@@ -24,25 +27,42 @@ function SignUpPage(){
   }
 
   return(
-    <div>
+    <Form onSubmit={handleSignUpSubmit} style={{padding: "10%"}}>
       <h1>Aanmelden</h1>
-      <form className="signUpForm" onSubmit={handleSignUpSubmit}>
-        <label>Gebruikersnaam</label>
-        <input type="text" name= "username" value= {user.username} onChange={handleChange}/>
-        <label>Email</label>
-        <input type="text" name= "email" value= {user.email} onChange={handleChange}/>
-        <label>Wachtwoord</label>
-        <input type="password" name= "password" value= {user.password} onChange={handleChange}/>
-        <button type="submit">Maak account aan</button>       
-      </form>
-      <div>
-        <h3>Al een account?</h3>
-        <div>
-          <Link to="/login"> <button>Login </button></Link>
-        </div>
+      <br/>
+      <Form.Group className="mb-3" controlId="user">
+        <Form.Label>Gebruikersnaam</Form.Label>
+        <Form.Control type="text" name= "username" placeholder= "Vul gebruikersnaam in" value= {user.username} onChange={handleChange}/>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="email">
+        <Form.Label>Gebruikersnaam</Form.Label>
+        <Form.Control type="text" name= "email" placeholder="Vul email in" value= {user.email} onChange={handleChange}/>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="user">
+        <Form.Label>Gebruikersnaam</Form.Label>
+        <Form.Control type="password" name= "password" placeholder="Vul wachtwoord in" value= {user.password} onChange={handleChange}/>
+      </Form.Group>
+      <Button variant="primary" type="submit">Aanmelden</Button>
+    </Form>
+    // <div>
+    //   <h1>Aanmelden</h1>
+    //   <form className="signUpForm" onSubmit={handleSignUpSubmit}>
+    //     <label>Gebruikersnaam</label>
+    //     <input type="text" name= "username" value= {user.username} onChange={handleChange}/>
+    //     <label>Email</label>
+    //     <input type="text" name= "email" value= {user.email} onChange={handleChange}/>
+    //     <label>Wachtwoord</label>
+    //     <input type="password" name= "password" value= {user.password} onChange={handleChange}/>
+    //     <button type="submit">Maak account aan</button>       
+    //   </form>
+    //   <div>
+    //     <h3>Al een account?</h3>
+    //     <div>
+    //       <Link to="/login"> <button>Login </button></Link>
+    //     </div>
 
-      </div>
-    </div>
+    //   </div>
+    // </div>
   )
 }
 export default SignUpPage;
