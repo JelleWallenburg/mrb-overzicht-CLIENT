@@ -24,8 +24,8 @@ function Vehicle({id, vehicle, change}){
       
       <Card.Body>
         <VehicleIcon vehicle={vehicle}/>
-        <Card.Title><h3>{vehicle.licensePlate}</h3></Card.Title>
-        <Card.Text><h3>€ {vehicle.mrb}</h3></Card.Text>
+        <Card.Title>{vehicle.licensePlate}</Card.Title>
+        <Card.Text>€ {vehicle.mrb}</Card.Text>
         <Card.Link href={`/vehicle/${vehicle._id}`}><h4>Bekijk dit voertuig</h4></Card.Link>
       </Card.Body>
     </Card>

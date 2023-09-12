@@ -17,12 +17,20 @@ const addGarage = (oneGarage) => {
   const storedToken = localStorage.getItem('authToken')
   return api.post("/garages/", {garageName: oneGarage.garageName, postalCode: oneGarage.postalCode},{headers: { Authorization: `Bearer ${storedToken}`}})
     .then(response => response.data)
-    .catch(err => console.error("catch1" ,err))
+    .catch(err => console.error("catch addGarage" ,err))
 }
 
-const deleteGarage= (garage) => {
+const editGarage = (id, oneGarage) => {
   const storedToken = localStorage.getItem('authToken')
-  return api.delete("/garages/", {data:{_id: garage._id}, headers: { Authorization: `Bearer ${storedToken}`}})
+  return api.put("/garages/", {_id:id,garageName: oneGarage.garageName, postalCode: oneGarage.postalCode},{headers: { Authorization: `Bearer ${storedToken}`}})
+    .then(response => response.data)
+    .catch(err => console.error("catch editGarage" ,err))
+}
+
+
+const deleteGarage= (oneGarage) => {
+  const storedToken = localStorage.getItem('authToken')
+  return api.delete("/garages/", {data:{_id: oneGarage._id}, headers: { Authorization: `Bearer ${storedToken}`}})
     .then(response => response.data)
     .catch(err => console.error(err))
 };
@@ -30,6 +38,7 @@ const deleteGarage= (garage) => {
 const garagesMethods = {
   getGarages,
   addGarage,
+  editGarage,
   deleteGarage
 }
 

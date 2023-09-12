@@ -31,8 +31,8 @@ function NewVehicleForm({change, id}){
       <h1>Voeg voertuig toe aan deze garage</h1>
       <br/>
       <Form.Group className="mb-3" controlId="garagename">
-        <Form.Label>Naam van garage</Form.Label>
-        <Form.Control type="text" name= "licensePlate" placeholder="Vul kenteken zonder streep in (6 tekens) " value={vehicle.licensePlate} onChange={handleChange}/>
+        <Form.Label>Kenteken voertuig</Form.Label>
+        <Form.Control type="text" name= "licensePlate" placeholder="Vul kenteken zonder streep in (6 tekens)" value={vehicle.licensePlate} onChange={handleChange}/>
       </Form.Group>
       <Button variant="primary" type="submit">Voeg voertuig toe</Button>
     </Form>    

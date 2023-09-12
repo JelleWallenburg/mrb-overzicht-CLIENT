@@ -13,8 +13,8 @@ function HomePage() {
 
   return(
     <main>
-    <section class="bg" style={{backgroundImage: car}}>
-      <div class= "color-overlay d-flex justify-content-center align-items-center">
+    <section className="bg" style={{backgroundImage: car}}>
+      <div className= "color-overlay d-flex justify-content-center align-items-center">
         <Container fluid="md">
           <Row>
             <Col><h1>Overzicht op jouw wegenbelasting</h1></Col>

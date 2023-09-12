@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState} from "react";
 import authMethods from "../services/auth.service";
 
@@ -44,25 +44,7 @@ function SignUpPage(){
       </Form.Group>
       <Button variant="primary" type="submit">Aanmelden</Button>
     </Form>
-    // <div>
-    //   <h1>Aanmelden</h1>
-    //   <form className="signUpForm" onSubmit={handleSignUpSubmit}>
-    //     <label>Gebruikersnaam</label>
-    //     <input type="text" name= "username" value= {user.username} onChange={handleChange}/>
-    //     <label>Email</label>
-    //     <input type="text" name= "email" value= {user.email} onChange={handleChange}/>
-    //     <label>Wachtwoord</label>
-    //     <input type="password" name= "password" value= {user.password} onChange={handleChange}/>
-    //     <button type="submit">Maak account aan</button>       
-    //   </form>
-    //   <div>
-    //     <h3>Al een account?</h3>
-    //     <div>
-    //       <Link to="/login"> <button>Login </button></Link>
-    //     </div>
 
-    //   </div>
-    // </div>
   )
 }
 export default SignUpPage;
