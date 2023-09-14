@@ -2,7 +2,7 @@
 
 ## Beschrijving
 
-mrb-overview is an app for getting insights in your monthly Dutch motor vehicle tax (mrb). Users can create virtual garages in regions in the Netherlands and add vehicles by licence plate to simulate their monthly mrb paid of their garage(s).
+mrb-overview is an app for getting insights in your monthly Dutch motor vehicle tax (mrb). Users can create virtual garages in regions in the Netherlands and add vehicles by licence plate to simulate their mrb paid of their garage(s).
 
 ## User Stories
 
