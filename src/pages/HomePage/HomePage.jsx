@@ -27,15 +27,14 @@ function HomePage() {
       </div>
     </section>
 
-    <section>
-      <Stack gap= {3} className="d-flex space-around" style={{padding: '5vh'}}>
-        <div><h1>Waarom een mrb overzicht?</h1></div>
-        <p>Het overzicht geeft <b>gratis</b> inzicht in jouw maandelijks te betalen motorrijtuigenbelasting. Door onze simulatie is het mogelijk om vooraf te weten te komen wat de motorrijtuigenbelasting gaat kosten. </p>
+   
+      <Stack gap= {3} className="d-flex space-around" style={{padding: '1vh 5vh' }}>
+        <div><h1>Waarom een mrb-overzicht?</h1></div>
+        <p>Het overzicht geeft <b>gratis</b> inzicht in jouw maandelijks te betalen motorrijtuigenbelasting. Door onze simulatie is het mogelijk om vooraf te weten te komen wat de motorrijtuigenbelasting gaat kosten. Op dit moment is het mrb-overzicht alleen bruikbaar voor personenauto's en motorrijtuigen. In de berekening wordt nog geen rekening gehouden met de fijnstoftoeslag en opcenting.</p>
       </Stack>
-    </section>
 
-  
-      <Container>
+
+      <Container style={{padding: '0vh 6vh' }}>
         <Row>
           <Col>
             <Card className="bg-secondary text-white">
@@ -60,10 +59,7 @@ function HomePage() {
           </Col>
         </Row>
       </Container>
-      <br/>   
     </main>
-
-    
   )
 }
 

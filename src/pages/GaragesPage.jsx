@@ -35,7 +35,7 @@ function GaragesPage () {
 
   return(
     <main>
-        <h1> Overview of garages</h1>
+        <h1> Overzicht van garages</h1>
       <div>
         {garages.map(garage => {
           return(

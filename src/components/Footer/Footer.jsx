@@ -11,7 +11,7 @@ function Footer(){
     <Navbar className="footer-custom fixed-bottom">
       <Container className="flex-d justify-content-center">
         <Nav>
-          <p>© Made by <Link href="https://github.com/JelleWallenburg">Jelle</Link>, 2023. All rights reserved.</p>
+          <p>© Made by <Link to="https://github.com/JelleWallenburg">Jelle</Link>, 2023. All rights reserved.</p>
         </Nav>
 
       </Container>

@@ -21,7 +21,7 @@ function NavBar() {
   return(
     <Navbar expand="lg" className="navbar-dark navbar-custom sticky-top">
       <Container className='d-flex justify-content-around'>
-        <Navbar.Brand href="/"><img src={carwheel} width="30" height="30"/> MRB-overzicht</Navbar.Brand>
+        <Navbar.Brand href="/"><img src={carwheel} width="30" height="30"/> mrb-overzicht</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
       </Container>
       <Container>

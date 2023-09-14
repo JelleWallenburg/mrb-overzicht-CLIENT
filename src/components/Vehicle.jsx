@@ -19,13 +19,12 @@ function Vehicle({id, vehicle, change}){
 
 
   return(
-    <Card className="bg-info" style={{margin:"5vh"}}>
-      <CloseButton onClick={deleteThisVehicle} style={{padding: "1vh"}}/>
-      
+    <Card className="bg-info" style={{margin:"2% 10% 2% 10%"}}>
+      <CloseButton onClick={deleteThisVehicle} style={{padding: "1%"}}/>    
       <Card.Body>
         <VehicleIcon vehicle={vehicle}/>
         <Card.Title>{vehicle.licensePlate}</Card.Title>
-        <Card.Text>€ {vehicle.mrb}</Card.Text>
+        <Card.Text> € {vehicle.mrb}</Card.Text>
         <Card.Link href={`/vehicle/${vehicle._id}`}><h4>Bekijk dit voertuig</h4></Card.Link>
       </Card.Body>
     </Card>

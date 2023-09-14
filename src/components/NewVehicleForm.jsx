@@ -27,7 +27,7 @@ function NewVehicleForm({change, id}){
   }
 
   return(
-    <Form className="bg-info" onSubmit={handleSubmit} style={{padding: "10%"}}>
+    <Form className="bg-info" onSubmit={handleSubmit} style={{padding: "4% 30%"}}>
       <h1>Voeg voertuig toe aan deze garage</h1>
       <br/>
       <Form.Group className="mb-3" controlId="garagename">

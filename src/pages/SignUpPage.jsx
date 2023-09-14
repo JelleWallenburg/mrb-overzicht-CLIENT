@@ -35,11 +35,11 @@ function SignUpPage(){
         <Form.Control type="text" name= "username" placeholder= "Vul gebruikersnaam in" value= {user.username} onChange={handleChange}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="email">
-        <Form.Label>Gebruikersnaam</Form.Label>
+        <Form.Label>E-mail</Form.Label>
         <Form.Control type="text" name= "email" placeholder="Vul email in" value= {user.email} onChange={handleChange}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="user">
-        <Form.Label>Gebruikersnaam</Form.Label>
+        <Form.Label>wachtwoord</Form.Label>
         <Form.Control type="password" name= "password" placeholder="Vul wachtwoord in" value= {user.password} onChange={handleChange}/>
       </Form.Group>
       <Button variant="primary" type="submit">Aanmelden</Button>

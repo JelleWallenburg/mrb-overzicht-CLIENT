@@ -30,7 +30,7 @@ function NewGarageForm({change}){
   }
 
   return(
-    <Form className= "bg-info" onSubmit={handleSubmit} style={{padding: "10%"}}>
+    <Form className= "bg-info" onSubmit={handleSubmit} style={{padding: "4% 15%"}}>
       <h1>Voeg een garage toe</h1>
       <Form.Group className="mb-3" controlId="garagename">
         <Form.Label>Naam van garage</Form.Label>
@@ -41,6 +41,7 @@ function NewGarageForm({change}){
         <Form.Control type="text" name="postalCode" placeholder="Vul postcode in" value={garage.postalCode} onChange={handleChange}/>
       </Form.Group>
       <Button variant="primary" type="submit">Voeg garage toe</Button>
+
     </Form>
   )
 };

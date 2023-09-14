@@ -47,7 +47,7 @@ function Garage({garage, change}){
   }
 
   return(
-    <Card className="bg-info" style={{margin:"5vh"}}>
+    <Card className="bg-info" style={{margin:"2% 10% 2% 10%"}}>
       <div className="d-flex flex-row align-items-center">
       <CloseButton onClick={deleteThisGarage} style={{padding: "1vh"}}/>
       <FontAwesomeIcon icon={faEdit} size="lg" onClick={() => setShowEdit(!showEdit)}  />
